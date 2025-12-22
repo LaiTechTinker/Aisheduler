@@ -1,0 +1,4 @@
+zenml
+pandas
+numpy 
+from_root
