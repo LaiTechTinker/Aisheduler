@@ -11,19 +11,26 @@ class MongoDBOp:
          logging.info("entered the mongodb operation section")
          self.Client=MongoClient(MONGO_URL)
          self.database=self.Client[DB_NAME]
+         logging.info("connected to mongodb successfully")
         except Exception as e:
            raise ErrorException(e,sys)
     def InsertMany(self,COLLECTION_NAME,Data):
      try:
        logging.info(f"entered the insertion of data from collection:{COLLECTION_NAME}")
-       inserted_data=self.database[COLLECTION_NAME].insert_many(Data)
-       return inserted_data
+       if isinstance(Data,dict):
+        inserted_data=self.database[COLLECTION_NAME].insert_many(Data)
+        return inserted_data
+       else:
+        logging.info("data is not in dict format")
+        raise ValueError("data is not in dict format")
+       return
      except Exception as e:
         raise ErrorException(e,sys)
     def FetchALL(self,COLLECTION_NAME):
      try:
        logging.info(f"entered the fetching of data from collection:{COLLECTION_NAME}")
-       returned_data=list(self.database[COLLECTION_NAME].find())
+       returned_data=self.database[COLLECTION_NAME].find()
+       return returned_data
      except Exception as e:
        raise ErrorException(e,sys)
     def insertOne(self,COLLECTION_NAME,obj):
@@ -34,4 +41,15 @@ class MongoDBOp:
          logging.info("insertion successfully")
        except Exception as e:
          raise ErrorException(e,sys)
+    def findOne(self,COLLECTION_NAME,id):
+      try:
+        logging.info("entered the single insertion of obj stage")
+        collection=self.database[COLLECTION_NAME]
+        find_data=collection.find_one(id)
+        return find_data
+        logging.info("insertion successfully")
+      except Exception as e:
+        raise ErrorException(e,sys)
+    
+
      
