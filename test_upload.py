@@ -9,8 +9,8 @@ obj= {
 }
 MONGO_URL=os.getenv("MONGODB_URL")
 DB_NAME=os.getenv("DB_NAME")
-file_path="./new_preference.json"
+file_path="./new_raw.json"
 with open(file_path,"r") as f:
     data=json.load(f)
 mongoClass=MongoDBOp(MONGO_URL, DB_NAME)
-mongoClass.InsertMany("Prefrence",data)
+mongoClass.InsertMany("rawdata",data["artifact_data"])

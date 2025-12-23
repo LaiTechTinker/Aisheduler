@@ -19,6 +19,7 @@ class MongoDBOp:
        logging.info(f"entered the insertion of data from collection:{COLLECTION_NAME}")
        if isinstance(Data,dict) or isinstance(Data,list):
         inserted_data=self.database[COLLECTION_NAME].insert_many(Data)
+        logging.info("data inserted successfully")
         return inserted_data
        else:
         logging.info("data is not in dict format")
