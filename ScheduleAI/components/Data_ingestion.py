@@ -4,7 +4,7 @@ from ScheduleAI.utils.mongodb import MongoDBOp
 from ScheduleAI.exception import ErrorException
 from datetime import datetime
 from dataclasses import dataclass
-TIMESTAMP:str=datetime.now.strftime("%m_%d_%Y_%H_%M_%S")
+TIMESTAMP:str=datetime.now().strftime("%m_%d_%Y_%H_%M_%S")
 @dataclass
 class Artifact:
  artifactdir=os.path.join("artifact",TIMESTAMP)
@@ -33,7 +33,7 @@ class DataIngestion:
       instruction_data=list(mongodb.FetchALL(collection))
       with open(DataIngestionConfig.instruction_file,"w") as f:
         json.dump(instruction_data,f,indent=4)
-    if collection=="Preference":
+    if collection=="Prefrence":
       preference_data=list(mongodb.FetchALL(collection))
       with open(DataIngestionConfig.preference_file,"w") as f:
         json.dump(preference_data,f,indent=4)
