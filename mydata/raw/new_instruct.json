@@ -1,7 +1,4 @@
 {
-    "train": {
-        "articles": {
-            "category": "articles",
             "samples": [
                 {
                     "instruction": "Explain how an LLM Twin can enhance communication efficiency.",
@@ -9002,14 +8999,8 @@
                 {
                     "instruction": "Describe the importance of writing style in communication.",
                     "answer": "Writing style plays a crucial role in communication as it reflects the author's personality and influences how the message is received by the audience. A distinct writing style can engage readers, convey emotions, and establish a connection, making the content more relatable and impactful. Moreover, writing style can vary greatly depending on the context, purpose, and audience, which highlights the need for adaptability in effective communication."
-                }
-            ]
-        }
-    },
-    "test": {
-        "articles": {
-            "category": "articles",
-            "samples": [
+                },
+         
                 {
                     "instruction": "Explain how data analysis contributes to strategic decision-making.",
                     "answer": "Data analysis contributes to strategic decision-making by providing actionable insights derived from vast amounts of information. By employing statistical techniques and visualization tools, organizations can identify trends, patterns, and anomalies in their data. This analytical approach empowers leaders to make informed choices, allocate resources effectively, and anticipate market changes, ultimately driving growth and sustainability."
@@ -10011,7 +10002,5 @@
                     "answer": "The impact of AI on job markets is multifaceted, presenting both opportunities and challenges. While AI can automate routine tasks, potentially displacing certain jobs, it also creates new roles that require advanced skills in technology and data analysis. The transition necessitates a focus on workforce training and education to equip individuals with the necessary competencies to thrive in an evolving job landscape, ultimately leading to more innovative and productive economies."
                 }
             ]
-        }
-    },
-    "test_split_size": 0.1
+    
 }

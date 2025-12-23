@@ -1,3 +1,5 @@
+#this code block will remove the default generated id from my json file and make it as a normal json file
+
 import json
 raw_filepath="./preference_datasets.json"
 
@@ -27,7 +29,7 @@ with open(raw_filepath, "r") as f:
 cleaned_data = remove_id(data)
 
 # Save result
-with open("new_instruct.json", "w") as f:
+with open("new_preference.json", "w") as f:
     json.dump(cleaned_data, f, indent=4)
 
 print("Done! All 'id' fields removed.")

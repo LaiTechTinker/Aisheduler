@@ -17,7 +17,7 @@ class MongoDBOp:
     def InsertMany(self,COLLECTION_NAME,Data):
      try:
        logging.info(f"entered the insertion of data from collection:{COLLECTION_NAME}")
-       if isinstance(Data,dict):
+       if isinstance(Data,dict) or isinstance(Data,list):
         inserted_data=self.database[COLLECTION_NAME].insert_many(Data)
         return inserted_data
        else:
@@ -46,8 +46,9 @@ class MongoDBOp:
         logging.info("entered the single insertion of obj stage")
         collection=self.database[COLLECTION_NAME]
         find_data=collection.find_one(id)
-        return find_data
         logging.info("insertion successfully")
+        return find_data
+        
       except Exception as e:
         raise ErrorException(e,sys)
     
