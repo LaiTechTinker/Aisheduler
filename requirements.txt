@@ -3,3 +3,9 @@ pandas
 numpy 
 from_root
 pymongo
+dotenv
+langchain-core==1.0.0 
+langchain==1.0.0
+sentence-transformers
+ipykernel
+
